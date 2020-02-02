@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul,
+ol {
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
-.App-link {
-  color: #61dafb;
+ul,
+ol {
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
+
+img {
+  width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.App {
+    display: flex; 
+}
+
+.NavLogo {
+    width: 20px;
+    height: 20px;
+}
+
+.Nav {
+    height: 100vh;
+    width: 200px;
+    border-right: solid rgb(197, 197, 197) 0.5px;
+    background-color: rgb(243, 242, 242);
+    padding-top: 20px;
+}
+
+.NavLi {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px 10px 35px;
+    list-style-type: none;
+}
+
+.NavLi p {
+    margin-left: 5px;
+}
+
+
+.NavTasks, .Projects {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.NavTasks p, .Projects p {
+    margin-left: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.InboxWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(226, 225, 225);
+    padding: 15px 0px 0px 25px;
+}    
+
+.NewTask {
+    margin: 10px 0px; 
+}
+
+.InboxHeader {
+    margin-bottom: 25px;
+}
+
+.TaskItem {
+    margin: 5px 0px; 
+}
+
+.CheckBoxLabel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.CheckBoxLabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}  
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #eee;
+}  
+
+.CheckBoxLabel:hover input ~ .checkmark {
+    background-color: rgba(59, 143, 56, 0.233);
+}  
+
+.CheckBoxLabel input:checked ~ .checkmark {
+    background-color: rgb(59, 143, 56);
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  
+.CheckBoxLabel input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.CheckBoxLabel .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 7px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.LabelItem {
+    margin-top: -7px;
+}
+
+
+
+
